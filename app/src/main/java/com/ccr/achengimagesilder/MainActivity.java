@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
 
         mSliderLayout.setPresetTransformer(SliderLayout.Transformer.Accordion);
         mSliderLayout.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
-        mSliderLayout.setCustomAnimation(new DescriptionAnimation());
+        mSliderLayout.setCustomAnimation(new DescriptionAnimation(false));
         mSliderLayout.setDuration(4000);
         mSliderLayout.addOnPageChangeListener(this);
         ListView l = (ListView) findViewById(R.id.transformers);

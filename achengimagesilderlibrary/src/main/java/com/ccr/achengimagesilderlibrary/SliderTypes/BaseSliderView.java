@@ -10,6 +10,7 @@ package com.ccr.achengimagesilderlibrary.SliderTypes;
  */
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -229,11 +230,11 @@ public abstract class BaseSliderView {
         Picasso p = (mPicasso != null) ? mPicasso : Picasso.with(mContext);
         RequestCreator rq = null;
         if (mUrl != null) {
-            rq = p.load(mUrl);
+            rq = p.load(mUrl).config(Bitmap.Config.ALPHA_8);
         } else if (mFile != null) {
-            rq = p.load(mFile);
+            rq = p.load(mFile).config(Bitmap.Config.ALPHA_8);
         } else if (mRes != 0) {
-            rq = p.load(mRes);
+            rq = p.load(mRes).config(Bitmap.Config.ALPHA_8);
         } else {
             return;
         }
